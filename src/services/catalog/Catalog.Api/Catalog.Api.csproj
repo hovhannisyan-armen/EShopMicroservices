@@ -13,4 +13,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\shared\Eshop.Shared\Eshop.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

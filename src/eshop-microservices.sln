@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{06F1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "services\catalog\Catalog.Api\Catalog.Api.csproj", "{19E50372-FFFE-4A6E-B975-F7A4EECDA1C0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{C1606E10-1B27-4F4B-843F-F1BB57B3490A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Shared", "shared\Eshop.Shared\Eshop.Shared.csproj", "{3CEB56C4-FECA-4CF1-9C9E-4A8BE244AA28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,11 +24,16 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{06F1B73C-9DEF-42EE-AA92-1CF9AAF834C6} = {16F7F46B-5866-4D6C-AE95-1028736B4EBD}
 		{19E50372-FFFE-4A6E-B975-F7A4EECDA1C0} = {06F1B73C-9DEF-42EE-AA92-1CF9AAF834C6}
+		{3CEB56C4-FECA-4CF1-9C9E-4A8BE244AA28} = {C1606E10-1B27-4F4B-843F-F1BB57B3490A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19E50372-FFFE-4A6E-B975-F7A4EECDA1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19E50372-FFFE-4A6E-B975-F7A4EECDA1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19E50372-FFFE-4A6E-B975-F7A4EECDA1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19E50372-FFFE-4A6E-B975-F7A4EECDA1C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CEB56C4-FECA-4CF1-9C9E-4A8BE244AA28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEB56C4-FECA-4CF1-9C9E-4A8BE244AA28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEB56C4-FECA-4CF1-9C9E-4A8BE244AA28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEB56C4-FECA-4CF1-9C9E-4A8BE244AA28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
