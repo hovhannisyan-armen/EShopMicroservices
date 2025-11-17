@@ -17,4 +17,10 @@
       <ProjectReference Include="..\..\..\shared\Eshop.Shared\Eshop.Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Carter" Version="10.0.0" />
+      <PackageReference Include="Marten" Version="8.15.4" />
+      <PackageReference Include="Scalar.AspNetCore" Version="2.10.3" />
+    </ItemGroup>
+
 </Project>

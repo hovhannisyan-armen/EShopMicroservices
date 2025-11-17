@@ -1,11 +1,13 @@
 using Catalog.Api.Models;
 using Eshop.Shared.CQRS;
+using Marten;
 
 namespace Catalog.Api.Products.Create;
 
-public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
+public class CreateProductCommandHandler(IDocumentSession session)
+    : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
-    public Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
         var product = new Product
         {
@@ -15,7 +17,10 @@ public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand,
             Categories = request.Categories,
             Description = request.Description,
         };
+        
+        session.Store(product);
+        await session.SaveChangesAsync(cancellationToken);
 
-        return Task.FromResult(new CreateProductResult(Guid.Empty));
+        return new CreateProductResult(Guid.Empty);
     }
 }
