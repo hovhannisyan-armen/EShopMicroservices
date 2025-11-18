@@ -21,6 +21,6 @@ public class CreateProductCommandHandler(IDocumentSession session)
         session.Store(product);
         await session.SaveChangesAsync(cancellationToken);
 
-        return new CreateProductResult(Guid.Empty);
+        return new CreateProductResult(product.Id);
     }
 }

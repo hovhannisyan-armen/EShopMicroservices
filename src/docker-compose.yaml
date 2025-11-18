@@ -1,0 +1,8 @@
+﻿version: "3.4"
+
+services:
+  catalog_db:
+    image: postgres
+
+volumes:
+  postgres_catalog:
