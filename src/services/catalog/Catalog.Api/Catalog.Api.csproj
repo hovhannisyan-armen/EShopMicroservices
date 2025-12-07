@@ -8,12 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\..\shared\Eshop.Shared\Eshop.Shared.csproj" />
     </ItemGroup>
 
@@ -21,6 +15,12 @@
       <PackageReference Include="Carter" Version="10.0.0" />
       <PackageReference Include="Marten" Version="8.15.4" />
       <PackageReference Include="Scalar.AspNetCore" Version="2.10.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

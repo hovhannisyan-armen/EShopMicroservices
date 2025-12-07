@@ -1,15 +1,29 @@
-﻿version: "3.4"
-
-services:
+﻿services:
   catalog_db:
     container_name: catalog_db
+    image: postgres
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=CatalogDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: CatalogDb
     restart: always
     ports:
       - "5432:5432"
     volumes:
       - postgres_catalog:/var/lib/postgresql
-      
+
+  catalog_api:
+    container_name: catalog_api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 8080
+      ConnectionStrings__Database: "Server=catalog_db;Port=5432;Database=CatalogDb;User Id=postgres;Password=postgres;Include Error Detail=true"
+    ports:
+      - "6000:8080"
+    volumes:
+      - ~/.microsoft/userSecrets:/home/app/.microsoft/userSecrets:ro
+    depends_on:
+      - catalog_db
+
+volumes:
+  postgres_catalog:

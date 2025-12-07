@@ -17,10 +17,9 @@ public class CreateProductCommandHandler(IDocumentSession session)
             Categories = request.Categories,
             Description = request.Description,
         };
-        
+
         session.Store(product);
         await session.SaveChangesAsync(cancellationToken);
-
         return new CreateProductResult(product.Id);
     }
 }

@@ -1,4 +1,7 @@
 using Carter;
+using Eshop.Shared.Behaviors;
+using FluentValidation;
+using JasperFx.Core.Reflection;
 using Marten;
 using Scalar.AspNetCore;
 
@@ -8,7 +11,10 @@ builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
 {
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    config.AddOpenBehavior(typeof(ValidationBehavior<,>));
 });
+
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
 builder.Services.AddMarten(options =>
 {
